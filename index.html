@@ -1,11 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
         <title>Nasrul Portofolio</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header></header>
-        <main></main>
-        <footer></footer>
+        <div class="scanlines"></div>
+        <header>
+            <h1 class="glitch" data-text="Welcome to">Welcome to</h1></n>
+            <h1 class="glitch" data-text="Nasrul's Playgroud">Nasrul's Playgroud</h1></n>
+        </header>
+        <main>
+            <section class="bio-section">
+                <h2>> CHARACTER_PROFILE</h2>
+                <div class="stats">
+                    <p><strong>NAME:</strong> Muhamad Nasrul Ilmi</p>
+                    <p><strong>CLASS:</strong> FULL-STACK JAVASCRIPT REBEL</p>
+                    <p><strong>LOCATION:</strong> TANGERANG SELATAN CITY / INDONESIA</p>
+                </div>
+                
+                <p class="bio-text">
+                    Operating in the digital frontier since the early cycles. 
+                    I specialize in turning caffeine and code into high-fidelity 
+                    experiences. If it doesn't glow, it's not finished.
+                </p>
+            </section>
+
+            <section class="contact-terminal">
+                <h2>> INITIATE_CONNECTION</h2>
+                <form action="#" class="terminal-form">
+                    <div class="input-group">
+                        <label for="name">USER_ID:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter Identity..." required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="email">UPLINK_ADDR:</label>
+                        <input type="email" id="email" name="email" placeholder="email@sector7.net" required>
+                    </div>
+            
+                    <div class="input-group">
+                        <label for="message">ENCRYPTED_MSG:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Type your transmission here..." required></textarea>
+                    </div>
+            
+                    <button type="submit" class="transmit-btn">EXECUTE_TRANSMISSION</button>
+                </form>
+
+                <div class="system-log">
+                    <div id="log-content">
+                        <p class="log-entry">> SYSTEM READY... STANDBY FOR INPUT.</p>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="socials">
+                <h3>CONNECT_VIA_SATELLITE</h3>
+                <div class="button-container">
+                    <a href="https://github.com/nasrul-ilmi" class="neon-button" target="_blank">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/muhamad-nasrul-ilmi-3451a317a/" class="neon-button" target="_blank">LINKEDIN</a>
+                    <!-- <a href="#" class="neon-button" target="_blank">INSTAGRAM</a> -->
+                </div>
+            </section>
+        </main>
+        <footer>
+            &copy; 2026 Muhamad Nasrul Ilmi
+        </footer>
+
+        <script src="script.js"></script>
     </body>
 </html>

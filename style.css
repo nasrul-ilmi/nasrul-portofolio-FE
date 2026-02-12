@@ -1,0 +1,331 @@
+/* Import a retro-style font from Google */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap');
+
+body {
+    background-color: #0a0a0a;
+    background-image: 
+        linear-gradient(rgba(255, 0, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px; /* This creates the "Grid" look */
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* Adds a subtle 'vignette' (darker corners) */
+    background: radial-gradient(circle, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+    z-index: 10000;
+}
+
+header {
+    padding: 6rem 2rem; /* Increased padding for better visibility */
+    text-align: center;
+    border-bottom: 4px solid #ff00ff;
+    box-shadow: 0px 5px 15px #ff00ff;
+    
+    /* Background Image Settings */
+    background-image: url('hero-bg.png'); /* Ensure the filename matches exactly */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Optional: Adds a dark tint so your text stays readable */
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    color: #fff;
+    /* This creates a neon glow effect */
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #ff00ff,
+        0 0 40px #ff00ff,
+        0 0 80px #ff00ff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+main {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ffff;
+    box-shadow: 10px 10px 0px #ff00ff;
+}
+
+.project-card {
+    border: 1px solid #ff00ff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    background: rgba(255, 0, 255, 0.1);
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #ff00ff;
+    margin-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+/* The "Ghost" layers */
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+/* Red shift layer */
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00ff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+/* Blue shift layer */
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00ffff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+/* The actual animation keyframes */
+@keyframes glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); }
+    20% { clip: rect(62px, 9999px, 42px, 0); }
+    40% { clip: rect(16px, 9999px, 78px, 0); }
+    60% { clip: rect(58px, 9999px, 43px, 0); }
+    80% { clip: rect(90px, 9999px, 86px, 0); }
+    100% { clip: rect(12px, 9999px, 20px, 0); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    20% { clip: rect(30px, 9999px, 15px, 0); }
+    40% { clip: rect(44px, 9999px, 92px, 0); }
+    60% { clip: rect(15px, 9999px, 52px, 0); }
+    80% { clip: rect(78px, 9999px, 29px, 0); }
+    100% { clip: rect(5px, 9999px, 40px, 0); }
+}
+
+/* Bio Section Styling */
+.bio-section h2 {
+    color: #00ffff;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.stats p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #ff00ff;
+}
+
+.bio-text {
+    margin-top: 2rem;
+    border-left: 3px solid #00ffff;
+    padding-left: 1rem;
+}
+
+/* Neon Buttons */
+.button-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.neon-button {
+    text-decoration: none;
+    color: #00ffff;
+    padding: 10px 20px;
+    border: 2px solid #00ffff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.neon-button:hover {
+    color: #000;
+    background-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff, 0 0 40px #00ffff;
+    transform: translateY(-5px);
+}
+
+.socials h3 {
+    margin-top: 3rem;
+    font-size: 1rem;
+    color: #ff00ff;
+}
+
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Creates the horizontal lines */
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.1) 50%
+    ), 
+    linear-gradient(
+        90deg, 
+        rgba(255, 0, 0, 0.03), 
+        rgba(0, 255, 0, 0.01), 
+        rgba(0, 0, 255, 0.03)
+    );
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none; /* Allows you to click buttons underneath */
+    z-index: 9999;
+    animation: scanline-flicker 0.15s infinite;
+}
+
+@keyframes scanline-flicker {
+    0% { opacity: 0.95; }
+    50% { opacity: 1; }
+    100% { opacity: 0.95; }
+}
+
+/* contact-terminal START*/
+.contact-terminal {
+    margin-top: 4rem;
+    padding: 2rem;
+    border: 1px dashed #00ffff;
+    position: relative;
+}
+
+.terminal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    color: #ff00ff; /* Neon Pink */
+    letter-spacing: 2px;
+}
+
+.input-group input, 
+.input-group textarea {
+    background: #000;
+    border: 1px solid #00ffff;
+    color: #33ff33; /* Classic Phosphor Green */
+    padding: 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    box-shadow: 0 0 10px #00ffff;
+    border-color: #fff;
+}
+
+.transmit-btn {
+    background: transparent;
+    border: 2px solid #ff00ff;
+    color: #ff00ff;
+    padding: 15px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+}
+
+.transmit-btn:hover {
+    background: #ff00ff;
+    color: #000;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* Placeholder color styling */
+::placeholder {
+    color: rgba(51, 255, 51, 0.3);
+}
+
+input:focus::placeholder, 
+textarea:focus::placeholder {
+    color: transparent;
+}
+
+/* Make the text color flicker slightly when typing */
+input:focus, textarea:focus {
+    animation: text-flicker 0.05s infinite;
+}
+
+@keyframes text-flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.98; }
+    100% { opacity: 1; }
+}
+
+.system-log {
+    margin-top: 1.5rem;
+    background: #000;
+    border: 1px solid #33ff33;
+    padding: 10px;
+    height: 100px;
+    overflow-y: auto;
+    font-size: 0.7rem;
+    color: #33ff33;
+    box-shadow: inset 0 0 10px #33ff33;
+}
+
+.log-entry {
+    margin: 4px 0;
+    font-family: 'Space Mono', monospace;
+}
+
+/* Custom Scrollbar for that Retro Look */
+.system-log::-webkit-scrollbar {
+    width: 8px;
+}
+.system-log::-webkit-scrollbar-thumb {
+    background: #33ff33;
+}
+/* contact-terminal END*/
