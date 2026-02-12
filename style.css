@@ -39,6 +39,7 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 300px;
     
     /* Optional: Adds a dark tint so your text stays readable */
     background-blend-mode: overlay;
@@ -61,12 +62,14 @@ h1 {
 }
 
 main {
+    width: 90%;
     max-width: 800px;
-    margin: 3rem auto;
-    padding: 2rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid #00ffff;
     box-shadow: 10px 10px 0px #ff00ff;
+    box-sizing: border-box;
 }
 
 .project-card {
@@ -142,16 +145,41 @@ footer {
 }
 
 /* Bio Section Styling */
+.bio-section {
+    padding: 1rem;
+    overflow-wrap: break-word; /* Prevents long text from breaking the layout */
+}
+
 .bio-section h2 {
     color: #00ffff;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
 
-.stats p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    color: #ff00ff;
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.label {
+    color: #ff00ff; /* Neon Pink */
+    font-weight: bold;
+    width: 120px;   /* Fixed width on desktop to keep things aligned */
+    flex-shrink: 0;
+}
+
+.value {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
 }
 
 .bio-text {
@@ -329,3 +357,115 @@ input:focus, textarea:focus {
     background: #33ff33;
 }
 /* contact-terminal END*/
+
+/* For tablets and phones (Screens smaller than 768px) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem; /* Shrink the glitchy text so it doesn't wrap weirdly */
+        letter-spacing: 2px;
+    }
+
+    header {
+        padding: 3rem 1rem;
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack social buttons vertically */
+        align-items: stretch;
+    }
+
+    .neon-button {
+        text-align: center;
+    }
+
+    .contact-terminal {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.3rem; /* Shrink the glitchy text so it doesn't wrap weirdly */
+        letter-spacing: 1.5px;
+    }
+
+    /* Responsive adjustment for the Bio Section */
+    .stat-row {
+        flex-direction: column; /* Stack Label on top of Value */
+        gap: 2px;
+        border-bottom: 1px solid #ff00ff;
+        padding-bottom: 10px;
+    }
+    
+    .label {
+        font-size: 0.7rem;
+        width: auto; /* Let it take full width */
+    }
+    
+    .value {
+        font-size: 0.9rem;
+        padding-left: 10px; /* Slight indent for the value */
+    }
+
+    .bio-text {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+}
+
+/* For very small phones (Screens smaller than 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Slightly smaller text for readability */
+    }
+
+    h1 {
+        font-size: 1rem; /* Shrink the glitchy text so it doesn't wrap weirdly */
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: 0.80rem;
+        letter-spacing: 1px;
+    }
+
+    .bio-section h2 {
+        font-size: 0.9rem;
+    }
+
+    .label {
+        font-size: 0.6rem;
+        width: auto; /* Let it take full width */
+    }
+    
+    .value {
+        font-size: 0.8rem;
+        padding-left: 10px; /* Slight indent for the value */
+    }
+
+    .bio-text {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .input-group label {
+        font-size: 0.65rem;
+    }
+    
+    .input-group input, 
+    .input-group textarea {
+        font-size: 0.65rem;
+    }
+
+    .transmit-btn {
+        font-size: 0.5rem;
+    }
+    
+    .system-log {
+        height: 150px; /* Give the log more height since the screen is narrow */
+    }
+
+    .socials h3 {
+        font-size: 0.9rem;
+    }
+}
